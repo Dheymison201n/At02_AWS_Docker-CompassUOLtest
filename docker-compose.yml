@@ -15,13 +15,13 @@ services:
     networks:
       - wordpress-network
     volumes:
-      - /mnt/nfs/mysql_data:/var/lib/mysql
+      - /nfs/mysql_data:/var/lib/mysql
   wordpress:
     image: wordpress:latest
     restart: always
     environment:
       TZ: America/Fortaleza  # Fuso horário de Fortaleza
-      WORDPRESS_DB_HOST: db
+      WORDPRESS_DB_HOST: wordpress.cktoypu3k0fs.us-east-1.rds.amazonaws.com
       WORDPRESS_DB_NAME: wordpress
       WORDPRESS_DB_USER: wordpress  # Nome de usuário principal
       WORDPRESS_DB_PASSWORD: wordpress  # Senha principal
