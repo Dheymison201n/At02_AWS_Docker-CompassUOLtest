@@ -45,11 +45,6 @@ Repositorio para a atividade de Docker, do programa de bolsas da Compass UOL.
 
 Configurar 2 grupos de segurança, um para a instância e outro para o load balancer.
 
-- Grupo de segurança do Bastion
-  Porta | Protocolo | Origem
-  --- | --- | ---
-  22222  | TCP | "MEU-IP"
-
 - Grupo de segurança do balanceador de carga
   Porta | Protocolo | Origem
   --- | --- | ---
