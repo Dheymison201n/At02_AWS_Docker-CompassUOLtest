@@ -24,7 +24,7 @@ Repositorio para a atividade de Docker, do programa de bolsas da Compass UOL.
 - Ponto adicional para o trabalho utilizar a instalação via script de Start Instance (user_data.sh)
 - Efetuar Deploy de uma aplicação Wordpress com: 
   - Container de aplicação
-  - Container database Mysql
+  - RDS database Mysql
   - Configuração da utilização do serviço EFS AWS para estáticos do container de aplicação Wordpress
   - Configuração do serviço de Load Balancer AWS para a aplicação Wordpress
 
@@ -155,6 +155,7 @@ Seguindo com a execução das instâncias, iremos continuar com a execução do 
 
 ## Executando Bastion Host
 Inicie navegando para o console da EC2 no link https://us-east-1.console.aws.amazon.com/ec2/home e selecione `executar instância`.
+
 ### Configuração da instância
 - `AMI: Linux 2`
 - `VPC: default`
@@ -200,6 +201,11 @@ sudo systemctl start docker
 sudo systemctl enable docker
 #adicionar o usuário ec2-user ao grupo docker
 sudo usermod -aG docker ${USER}
+```
+Configurando permissões do socket do Docker
+
+```bash
+chmod 666 /var/run/docker.sock
 ```
 
 # Instalação do Docker Compose
